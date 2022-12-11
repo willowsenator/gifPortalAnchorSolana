@@ -1,14 +1,14 @@
 [features]
 seeds = false
 skip-lint = false
-[programs.localnet]
-gif_portal_anchor = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+[programs.devnet]
+gif_portal_anchor = "9AoSE8a3xWTmkvP58DjPDgCXto2Ct3ygn8D76eniaLYT"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "/home/willowsenator/.config/solana/id.json"
 
 [scripts]
