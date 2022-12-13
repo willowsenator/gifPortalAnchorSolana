@@ -7,11 +7,10 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c62d2ac-0d30-48ef-a91b-e07b035bebc7" name="Changes" comment="Add test to anchor rust solana">
+    <list default="true" id="9c62d2ac-0d30-48ef-a91b-e07b035bebc7" name="Changes" comment="Add new function to add Gif info to blockchain">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Anchor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Anchor.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/programs/gif-portal-anchor/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/programs/gif-portal-anchor/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/gif-portal-anchor.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/gif-portal-anchor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,28 +35,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Develop/projects/kotlin",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "wsl://Ubuntu-20.04@/home/willowsenator/.nvm/versions/node/v16.17.0/bin/node",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Develop\\projects\\blockchain\\solana\\gif-portal-anchor\\node_modules\\prettier",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Develop/projects/kotlin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;wsl://Ubuntu-20.04@/home/willowsenator/.nvm/versions/node/v16.17.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Develop\\projects\\blockchain\\solana\\gif-portal-anchor\\node_modules\\prettier&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="//wsl$/Ubuntu-20.04/home/willowsenator/.cargo/bin" />
     <option name="version" value="2" />
@@ -71,7 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1670780674518</updated>
       <workItem from="1670780675555" duration="2123000" />
-      <workItem from="1670788944906" duration="6130000" />
+      <workItem from="1670788944906" duration="6806000" />
+      <workItem from="1670888751369" duration="2973000" />
     </task>
     <task id="LOCAL-00001" summary="Add test to anchor rust solana">
       <created>1670782829357</created>
@@ -80,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670782829357</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add new function to add Gif info to blockchain">
+      <created>1670802235963</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670802235963</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,7 +95,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add test to anchor rust solana" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test to anchor rust solana" />
+    <MESSAGE value="Add new function to add Gif info to blockchain" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new function to add Gif info to blockchain" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
