@@ -29,6 +29,16 @@ const main = async() =>{
   account = await program.account.baseAccount.fetch(baseAccount.publicKey)
   console.log("GIF count: ", account.totalGifs.toString())
   console.log("GIF list: ", account.gifList)
+
+  await program.rpc.voteGif("0",{
+    accounts:{
+      baseAccount: baseAccount.publicKey
+    }
+  })
+
+  account = await program.account.baseAccount.fetch(baseAccount.publicKey)
+  console.log("GIF count: ", account.totalGifs.toString())
+  console.log("GIF list: ", account.gifList)
 }
 
 const runMain = async() =>{

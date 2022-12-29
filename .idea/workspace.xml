@@ -9,8 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c62d2ac-0d30-48ef-a91b-e07b035bebc7" name="Changes" comment="Add new function to add Gif info to blockchain">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Anchor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Anchor.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programs/gif-portal-anchor/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/programs/gif-portal-anchor/src/lib.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,9 @@
         <option value="package.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="cav7jnoz" />
@@ -41,7 +42,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Develop/projects/kotlin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/willowsenator/projects/blockchain/solana/gifPortalWeb&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -53,12 +54,12 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RustProjectSettings">
-    <option name="toolchainHomeDirectory" value="//wsl$/Ubuntu-20.04/home/willowsenator/.cargo/bin" />
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
     <option name="version" value="2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -72,6 +73,9 @@
       <workItem from="1670780675555" duration="2123000" />
       <workItem from="1670788944906" duration="6806000" />
       <workItem from="1670888751369" duration="2973000" />
+      <workItem from="1672078266126" duration="104000" />
+      <workItem from="1672258260361" duration="1055000" />
+      <workItem from="1672260223356" duration="979000" />
     </task>
     <task id="LOCAL-00001" summary="Add test to anchor rust solana">
       <created>1670782829357</created>
