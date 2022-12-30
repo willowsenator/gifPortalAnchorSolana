@@ -19,7 +19,8 @@ pub mod gif_portal_anchor {
         let item = ItemStruct{
             gif_link: gif_link.to_string(),
             user_address: *user.to_account_info().key,
-            num_votes: 0
+            num_votes: 0,
+            vote_user_list: Vec::new(),
         };
         base_account.gif_list.push(item);
         base_account.total_gifs += 1;
@@ -28,7 +29,9 @@ pub mod gif_portal_anchor {
 
     pub fn vote_gif(ctx:Context<VoteGif>, gif_index:String)->ProgramResult {
         let base_account = &mut ctx.accounts.base_account;
+        let vote_user = &mut ctx.accounts.vote_user;
         base_account.gif_list[gif_index.parse::<usize>().unwrap()].num_votes += 1;
+        base_account.gif_list[gif_index.parse::<usize>().unwrap()].vote_user_list.push(*vote_user.to_account_info().key);
         Ok(())
     }
 }
@@ -40,7 +43,7 @@ pub struct StartStuffOff<'info>{
     pub base_account:Account<'info, BaseAccount>,
     #[account(mut)]
     pub user: Signer<'info>,
-    pub system_program: Program<'info, System>
+    pub system_program: Program<'info, System>,
 }
 
 #[derive(Accounts)]
@@ -48,30 +51,27 @@ pub struct AddGif<'info>{
     #[account(mut)]
     pub base_account: Account<'info, BaseAccount>,
     #[account(mut)]
-    pub user: Signer<'info>
+    pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
 pub struct VoteGif<'info>{
     #[account(mut)]
     pub base_account: Account<'info, BaseAccount>,
+    #[account(mut)]
+    pub vote_user: Signer<'info>,
 }
 
 #[derive(Debug, Clone, AnchorSerialize, AnchorDeserialize)]
 pub struct ItemStruct {
     pub gif_link: String,
     pub user_address: Pubkey,
-    pub num_votes: u64
+    pub num_votes: u64,
+    pub vote_user_list: Vec<Pubkey>,
 }
 
 #[account]
 pub struct BaseAccount{
     pub total_gifs: u64,
-    pub gif_list: Vec<ItemStruct>
-}
-
-#[error_code]
-pub enum GifErrors {
-    #[msg("Vote User Address cannot be the same as Gif User Address")]
-    VoteUserAddressNotTheSameAsGifUserAddress,
+    pub gif_list: Vec<ItemStruct>,
 }

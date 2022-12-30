@@ -32,7 +32,8 @@ const main = async() =>{
 
   await program.rpc.voteGif("0",{
     accounts:{
-      baseAccount: baseAccount.publicKey
+      baseAccount: baseAccount.publicKey,
+      voteUser: provider.wallet.publicKey,
     }
   })
 
