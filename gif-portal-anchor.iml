@@ -5,6 +5,10 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/programs/gif-portal-anchor/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/.anchor" />
+      <excludeFolder url="file://$MODULE_DIR$/.anchor/test-ledger/accounts" />
+      <excludeFolder url="file://$MODULE_DIR$/.anchor/test-ledger/snapshot" />
+      <excludeFolder url="file://$MODULE_DIR$/.anchor/program-logs" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

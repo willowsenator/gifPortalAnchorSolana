@@ -7,9 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c62d2ac-0d30-48ef-a91b-e07b035bebc7" name="Changes" comment="Add new function to add Gif info to blockchain">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9c62d2ac-0d30-48ef-a91b-e07b035bebc7" name="Changes" comment="Add cargo.lock and package-lock.json" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="cav7jnoz" />
@@ -91,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670802235963</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add cargo.lock and package-lock.json">
+      <created>1672443316884</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672443316884</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,7 +106,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add test to anchor rust solana" />
     <MESSAGE value="Add new function to add Gif info to blockchain" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new function to add Gif info to blockchain" />
+    <MESSAGE value="modify .gitignore" />
+    <MESSAGE value="Add cargo.lock and package-lock.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add cargo.lock and package-lock.json" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
