@@ -7,7 +7,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c62d2ac-0d30-48ef-a91b-e07b035bebc7" name="Changes" comment="Add cargo.lock and package-lock.json" />
+    <list default="true" id="9c62d2ac-0d30-48ef-a91b-e07b035bebc7" name="Changes" comment="change Program Address for anchor and rust">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +51,7 @@
     &quot;nodejs_interpreter_path&quot;: &quot;wsl://Ubuntu-20.04@/home/willowsenator/.nvm/versions/node/v16.17.0/bin/node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.hideToolchainNotifications&quot;: &quot;true&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Develop\\projects\\blockchain\\solana\\gif-portal-anchor\\node_modules\\prettier&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -75,6 +78,8 @@
       <workItem from="1672078266126" duration="104000" />
       <workItem from="1672258260361" duration="1055000" />
       <workItem from="1672260223356" duration="979000" />
+      <workItem from="1672515844476" duration="2805000" />
+      <workItem from="1672529115001" duration="2060000" />
     </task>
     <task id="LOCAL-00001" summary="Add test to anchor rust solana">
       <created>1670782829357</created>
@@ -97,18 +102,45 @@
       <option name="project" value="LOCAL" />
       <updated>1672443316884</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add iml idea">
+      <created>1672443373332</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672443373332</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change Program Address for anchor and rust">
+      <created>1672516922175</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672516922175</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add test to anchor rust solana" />
     <MESSAGE value="Add new function to add Gif info to blockchain" />
     <MESSAGE value="modify .gitignore" />
     <MESSAGE value="Add cargo.lock and package-lock.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add cargo.lock and package-lock.json" />
+    <MESSAGE value="add iml idea" />
+    <MESSAGE value="change Program Address for anchor and rust" />
+    <option name="LAST_COMMIT_MESSAGE" value="change Program Address for anchor and rust" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

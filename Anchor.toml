@@ -2,7 +2,7 @@
 seeds = false
 skip-lint = false
 [programs.devnet]
-gif_portal_anchor = "D6vuZhHnxDWKCRmDprhYrV6otUtS4NdrkMTTQQzS6Zdm"
+gif_portal_anchor = "FzwXxcH2FVRaqXtXx41N8vxpKPoQY3wRPnJJ7TMjP3da"
 
 [registry]
 url = "https://api.apr.dev"
