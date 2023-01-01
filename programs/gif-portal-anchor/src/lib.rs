@@ -2,6 +2,16 @@ use anchor_lang::prelude::*;
 
 declare_id!("FzwXxcH2FVRaqXtXx41N8vxpKPoQY3wRPnJJ7TMjP3da");
 
+fn check_in_list(vote_user_address:Pubkey, vote_user_list:Vec<Pubkey>)->bool{
+    for item in vote_user_list.iter(){
+        if *item == vote_user_address{
+            return true;
+        }
+    }
+
+    return false;
+}
+
 #[program]
 pub mod gif_portal_anchor {
     use anchor_lang::solana_program::entrypoint::ProgramResult;
@@ -30,9 +40,19 @@ pub mod gif_portal_anchor {
     pub fn vote_gif(ctx:Context<VoteGif>, gif_index:String)->ProgramResult {
         let base_account = &mut ctx.accounts.base_account;
         let vote_user = &mut ctx.accounts.vote_user;
-        base_account.gif_list[gif_index.parse::<usize>().unwrap()].num_votes += 1;
-        base_account.gif_list[gif_index.parse::<usize>().unwrap()].vote_user_list.push(*vote_user.to_account_info().key);
-        Ok(())
+        if base_account.gif_list[gif_index.parse::<usize>().unwrap()].user_address != *vote_user.to_account_info().key{
+            if !check_in_list(*vote_user.to_account_info().key, (*base_account.gif_list[gif_index.parse::<usize>().unwrap()].vote_user_list).to_vec()){
+                base_account.gif_list[gif_index.parse::<usize>().unwrap()].num_votes += 1;
+                base_account.gif_list[gif_index.parse::<usize>().unwrap()].vote_user_list.push(*vote_user.to_account_info().key);
+                Ok(())
+            }
+            else {
+                return Err(ProgramError::Custom(6001));
+            }
+        }
+        else{
+            return Err(ProgramError::Custom(6000));
+        }
     }
 }
 
@@ -74,4 +94,12 @@ pub struct ItemStruct {
 pub struct BaseAccount{
     pub total_gifs: u64,
     pub gif_list: Vec<ItemStruct>,
+}
+
+#[error_code]
+pub enum MyError {
+    #[msg("You cannot vote with the same gif owner account")]
+    VoteAccountNotGifOwnerAccount,
+    #[msg("You have already voted")]
+    AlreadyVoted
 }

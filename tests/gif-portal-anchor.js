@@ -36,10 +36,6 @@ const main = async() =>{
       voteUser: provider.wallet.publicKey,
     }
   })
-
-  account = await program.account.baseAccount.fetch(baseAccount.publicKey)
-  console.log("GIF count: ", account.totalGifs.toString())
-  console.log("GIF list: ", account.gifList)
 }
 
 const runMain = async() =>{
