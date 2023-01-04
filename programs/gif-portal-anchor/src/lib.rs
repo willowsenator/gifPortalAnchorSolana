@@ -31,6 +31,7 @@ pub mod gif_portal_anchor {
             user_address: *user.to_account_info().key,
             num_votes: 0,
             vote_user_list: Vec::new(),
+            donate_amount: 0
         };
         base_account.gif_list.push(item);
         base_account.total_gifs += 1;
@@ -55,76 +56,81 @@ pub mod gif_portal_anchor {
         }
     }
 
-    pub fn donate_to_gif_owner(ctx:Context<DonateToGifOwner>, gif_index: String, amount: u64)->ProgramResult {
+    pub fn donate_to_gif_owner(ctx:Context<DonateToGifOwner>, gif_index:String, amount: u64)->ProgramResult {
         let from = &mut ctx.accounts.from;
         let base_account = &mut ctx.accounts.base_account;
 
+
         if base_account.gif_list[gif_index.parse::<usize>().unwrap()].user_address != *from.to_account_info().key {
-            let ix = anchor_lang::solana_program::system_instruction::transfer(
-                &ctx.accounts.from.key(),
-                &ctx.accounts.base_account.gif_list[gif_index.parse::<usize>().unwrap()].user_address.key(),
-                amount,
-            );
-            anchor_lang::solana_program::program::invoke(
-                &ix,
-                &[
-                    ctx.accounts.from.to_account_info(),
-                    // Account info for to
-                    ctx.accounts.base_account.gif_list[gif_index.parse::<usize>().unwrap()].user_address.key().to_account_info(),
-                ],
-            )
+                    let ix = anchor_lang::solana_program::system_instruction::transfer(
+                        &ctx.accounts.from.key(),
+                        &ctx.accounts.to.key(),
+                        amount,
+                    );
+
+                    anchor_lang::solana_program::program::invoke(
+                        &ix,
+                        &[
+                            ctx.accounts.from.to_account_info(),
+                            ctx.accounts.to.to_account_info(),
+                        ],
+                    ).expect("Error to donate");
+                    base_account.gif_list[gif_index.parse::<usize>().unwrap()].donate_amount += amount;
+                    Ok(())
         }else{
             return Err(ProgramError::Custom(6002));
         }
     }
 }
 
-
 #[derive(Accounts)]
 pub struct StartStuffOff<'info>{
     #[account(init, payer=user, space=9000)]
-    pub base_account:Account<'info, BaseAccount>,
+    base_account:Account<'info, BaseAccount>,
     #[account(mut)]
-    pub user: Signer<'info>,
-    pub system_program: Program<'info, System>,
+    user: Signer<'info>,
+    system_program: Program<'info, System>,
 }
 
 #[derive(Accounts)]
 pub struct AddGif<'info>{
     #[account(mut)]
-    pub base_account: Account<'info, BaseAccount>,
+    base_account: Account<'info, BaseAccount>,
     #[account(mut)]
-    pub user: Signer<'info>,
+    user: Signer<'info>,
 }
 
 #[derive(Accounts)]
 pub struct VoteGif<'info>{
     #[account(mut)]
-    pub base_account: Account<'info, BaseAccount>,
+    base_account: Account<'info, BaseAccount>,
     #[account(mut)]
-    pub vote_user: Signer<'info>,
+    vote_user: Signer<'info>,
 }
 
 #[derive(Accounts)]
 pub struct DonateToGifOwner<'info> {
     #[account(mut)]
-    pub from: Signer<'info>,
+    from: Signer<'info>,
     #[account(mut)]
-    pub base_account: Account<'info, BaseAccount>
+    to: Signer<'info>,
+    #[account(mut)]
+    base_account: Account<'info, BaseAccount>
 }
 
 #[derive(Debug, Clone, AnchorSerialize, AnchorDeserialize)]
 pub struct ItemStruct {
-    pub gif_link: String,
-    pub user_address: Pubkey,
-    pub num_votes: u64,
-    pub vote_user_list: Vec<Pubkey>,
+    gif_link: String,
+    user_address: Pubkey,
+    num_votes: u64,
+    vote_user_list: Vec<Pubkey>,
+    donate_amount: u64,
 }
 
 #[account]
 pub struct BaseAccount{
-    pub total_gifs: u64,
-    pub gif_list: Vec<ItemStruct>,
+    total_gifs: u64,
+    gif_list: Vec<ItemStruct>,
 }
 
 #[error_code]
@@ -134,5 +140,5 @@ pub enum GifErrors {
     #[msg("You have already voted")]
     AlreadyVoted,
     #[msg("You cannot donate to yourself")]
-    DonateToSameAddress
+    DonateToSameAddress,
 }

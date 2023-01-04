@@ -46,6 +46,7 @@ catch(e){
       accounts:{
         baseAccount: baseAccount.publicKey,
         from: provider.wallet.publicKey,
+        to: provider.wallet.publicKey,
       }
     })
   }
