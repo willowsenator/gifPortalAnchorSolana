@@ -54,6 +54,29 @@ pub mod gif_portal_anchor {
             return Err(ProgramError::Custom(6000));
         }
     }
+
+    pub fn donate_to_gif_owner(ctx:Context<DonateToGifOwner>, gif_index: String, amount: u64)->ProgramResult {
+        let from = &mut ctx.accounts.from;
+        let base_account = &mut ctx.accounts.base_account;
+
+        if base_account.gif_list[gif_index.parse::<usize>().unwrap()].user_address != *from.to_account_info().key {
+            let ix = anchor_lang::solana_program::system_instruction::transfer(
+                &ctx.accounts.from.key(),
+                &ctx.accounts.base_account.gif_list[gif_index.parse::<usize>().unwrap()].user_address.key(),
+                amount,
+            );
+            anchor_lang::solana_program::program::invoke(
+                &ix,
+                &[
+                    ctx.accounts.from.to_account_info(),
+                    // Account info for to
+                    ctx.accounts.base_account.gif_list[gif_index.parse::<usize>().unwrap()].user_address.key().to_account_info(),
+                ],
+            )
+        }else{
+            return Err(ProgramError::Custom(6002));
+        }
+    }
 }
 
 
@@ -82,6 +105,14 @@ pub struct VoteGif<'info>{
     pub vote_user: Signer<'info>,
 }
 
+#[derive(Accounts)]
+pub struct DonateToGifOwner<'info> {
+    #[account(mut)]
+    pub from: Signer<'info>,
+    #[account(mut)]
+    pub base_account: Account<'info, BaseAccount>
+}
+
 #[derive(Debug, Clone, AnchorSerialize, AnchorDeserialize)]
 pub struct ItemStruct {
     pub gif_link: String,
@@ -97,9 +128,11 @@ pub struct BaseAccount{
 }
 
 #[error_code]
-pub enum MyError {
+pub enum GifErrors {
     #[msg("You cannot vote with the same gif owner account")]
     VoteAccountNotGifOwnerAccount,
     #[msg("You have already voted")]
-    AlreadyVoted
+    AlreadyVoted,
+    #[msg("You cannot donate to yourself")]
+    DonateToSameAddress
 }
