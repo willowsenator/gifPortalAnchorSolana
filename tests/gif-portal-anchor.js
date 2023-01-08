@@ -47,6 +47,7 @@ catch(e){
         baseAccount: baseAccount.publicKey,
         from: provider.wallet.publicKey,
         to: provider.wallet.publicKey,
+        systemProgram: anchor.web3.SystemProgram.programId,
       }
     })
   }

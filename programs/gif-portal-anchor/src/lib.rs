@@ -113,9 +113,11 @@ pub struct DonateToGifOwner<'info> {
     #[account(mut)]
     from: Signer<'info>,
     /// CHECK:
+    #[account(mut)]
     to: AccountInfo<'info>,
     #[account(mut)]
-    base_account: Account<'info, BaseAccount>
+    base_account: Account<'info, BaseAccount>,
+    system_program: Program<'info, System>,
 }
 
 #[derive(Debug, Clone, AnchorSerialize, AnchorDeserialize)]
