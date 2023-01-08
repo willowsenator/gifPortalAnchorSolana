@@ -112,8 +112,8 @@ pub struct VoteGif<'info>{
 pub struct DonateToGifOwner<'info> {
     #[account(mut)]
     from: Signer<'info>,
-    #[account(mut)]
-    to: Signer<'info>,
+    /// CHECK:
+    to: AccountInfo<'info>,
     #[account(mut)]
     base_account: Account<'info, BaseAccount>
 }

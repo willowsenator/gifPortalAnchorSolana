@@ -10,7 +10,6 @@
     <list default="true" id="9c62d2ac-0d30-48ef-a91b-e07b035bebc7" name="Changes" comment="Add donate_to_gif_owner">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/programs/gif-portal-anchor/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/programs/gif-portal-anchor/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/gif-portal-anchor.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/gif-portal-anchor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,8 @@
       <workItem from="1672592041477" duration="13000" />
       <workItem from="1672865018031" duration="4512000" />
       <workItem from="1672869790308" duration="162000" />
-      <workItem from="1673024577943" duration="8808000" />
+      <workItem from="1673024577943" duration="8861000" />
+      <workItem from="1673197399914" duration="300000" />
     </task>
     <task id="LOCAL-00001" summary="Add test to anchor rust solana">
       <created>1670782829357</created>
@@ -152,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672869568420</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add donate_to_gif_owner">
+      <created>1673036318599</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673036318599</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
